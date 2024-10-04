@@ -1,0 +1,52 @@
+#form {
+  margin-top: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  & #form-add {
+    all: unset;
+    flex: 4;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    outline: 2px solid var(--border-primary);
+    border-radius: 0.75rem;
+    font: 400 1rem/1.4 "Inter", sans-serif;
+    color: var(--content-primary);
+    transition: outline 200ms linear;
+    &::placeholder {
+      color: var(--content-tertiary);
+    }
+
+    &:hover {
+      outline-color: var(--border-hover);
+    }
+
+    &:focus,
+    &:focus-within {
+      outline-color: var(--color-brand);
+    }
+  }
+
+  & .btn {
+    all: unset;
+    flex: 1 0 0;
+    background-color: var(--color-brand);
+    color: var(--content-white);
+    padding: 1.2rem;
+    border-radius: 0.875rem;
+    font: var(--label);
+    text-align: center;
+
+    cursor: pointer;
+    /* height: 24px; */
+    transition: background-color 200ms linear;
+
+    &:hover {
+      background-color: var(--color-brand-hover);
+    }
+  }
+}

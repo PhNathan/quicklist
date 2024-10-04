@@ -1,0 +1,68 @@
+#list-items {
+  list-style: none;
+  padding: 0;
+  padding-inline: 0.3rem;
+  padding-block: 0.5rem;
+  height: 400px;
+  max-width: 100%;
+  overflow-y: auto;
+  & .item {
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    margin-top: 0.875rem;
+    padding-inline: 1rem;
+
+    border-radius: 0.875rem;
+    outline: 2px solid transparent;
+    transition: outline 200ms linear;
+
+    &:hover {
+      outline: 2px solid var(--border-primary);
+    }
+
+    &:has(input[type="checkbox"]:checked) {
+      outline: 2px solid var(--color-brand);
+    }
+
+    &:hover .content::before {
+      background-image: url("../assets/icons/check-hover.svg");
+    }
+    & .content-label {
+      flex: 1;
+      padding: 1rem 1rem;
+      cursor: pointer;
+
+      & input[type="checkbox"] {
+        all: unset;
+      }
+
+      & input[type="checkbox"]:checked ~ .content::before {
+        background-image: url("../assets/icons/check-selected.svg");
+      }
+    }
+
+    & .content {
+      position: relative;
+      display: inline-flex;
+      padding-left: 0.5rem;
+      align-items: center;
+      font: var(--paragraph);
+      max-width: 100%;
+      text-transform: capitalize;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        background-image: url("../assets/icons/check-Default.svg");
+        transition: background-image 200ms linear;
+      }
+    }
+  }
+}
