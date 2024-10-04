@@ -3,7 +3,7 @@
   padding: 0;
   padding-inline: 0.3rem;
   padding-block: 0.5rem;
-  height: 400px;
+  height: 250px;
   max-width: 100%;
   overflow-y: auto;
   & .item {
